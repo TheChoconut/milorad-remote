@@ -98,19 +98,19 @@ onMount(() => {
     </div>
     <div class="h-[calc(100vh-260px)] grid grid-cols-3 grid-rows-3 gap-4 lg:aspect-square mx-auto">
         <div></div>
-        <button on:mousedown={() => sendCommand("F")} on:mouseup={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900 text-white focus:opacity-90">
+        <button on:touchstart={() => sendCommand("F")} on:touchend={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900 text-white focus:opacity-90">
             <Icon icon={arrowUp} class="w-full h-full" />
         </button>
         <div></div>
-        <button on:mousedown={() => sendCommand("F")} on:mouseup={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900  text-white focus:opacity-90">
+        <button on:touchstart={() => sendCommand("L")} on:touchend={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900  text-white focus:opacity-90">
             <Icon icon={arrowLeft} class="w-full h-full" />
         </button>
         <div></div>
-        <button on:mousedown={() => sendCommand("F")} on:mouseup={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900  text-white focus:opacity-90">
+        <button on:touchstart={() => sendCommand("R")} on:touchend={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900  text-white focus:opacity-90">
             <Icon icon={arrowRight} class="w-full h-full" />
         </button>
         <div></div>
-        <button on:mousedown={() => sendCommand("F")} on:mouseup={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900 text-white focus:opacity-90">
+        <button on:touchstart={() => sendCommand("B")} on:touchend={() => sendCommand("K")} class="w-full h-full btn btn-ghost bg-gray-800 hover:bg-gray-900 text-white focus:opacity-90">
             <Icon icon={arrowDown} class="w-full h-full" />
         </button>
         <div></div>
