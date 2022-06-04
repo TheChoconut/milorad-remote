@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
 sock = Sock(app)
-#ser = serial.Serial('COM1', 9600)
+ser = serial.Serial('/dev/ttyACM0', 9600)
 
 @sock.route('/main')
 def mainRoute(ws):
@@ -13,11 +13,9 @@ def mainRoute(ws):
         jsonEncoded = ws.receive()
         obj = json.loads(jsonEncoded)
         if obj['cmd'] == 'direct':
-            print(obj['val'].encode())
-            #ser.write(obj[val].encode())
+            ser.write(obj['val'].encode() + b'\r\n')
         elif obj['cmd'] == 'speed':
-            print(b'S' + bytes([obj['val']]))
-            #ser.write(b'S' + bytes([obj['val']]))
+            ser.write(b'S' + bytes([obj['val']]))
 
 @app.route('/')
 def root():
